@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学笔记智能搜索系统 - 在线演示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .launch-section {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .launch-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .launch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .status-complete {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .math-formula {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+        }
+        
+        .screenshot-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .demo-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧮 数学笔记智能搜索系统</h1>
+            <p>专为数学学习设计的智能笔记和搜索工具</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>数学笔记编辑器</h3>
+                <p>支持Markdown和LaTeX公式的实时编辑预览，让数学表达更加直观</p>
+                <span class="status-badge status-complete">✅ 已完成</span>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>智能搜索功能</h3>
+                <p>多源搜索整合，自动识别数学内容，提供精准的搜索结果</p>
+                <span class="status-badge status-progress">🔄 开发中</span>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>搜索历史管理</h3>
+                <p>完整的搜索记录和统计分析，帮助追踪学习进度</p>
+                <span class="status-badge status-complete">✅ 已完成</span>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧮</div>
+                <h3>数学内容识别</h3>
+                <p>自动检测和处理数学术语、公式，提升搜索准确性</p>
+                <span class="status-badge status-progress">🔄 开发中</span>
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h2>🚀 功能演示</h2>
+            <p>体验我们的数学笔记编辑器，支持以下数学公式格式：</p>
+            
+            <div class="math-formula">
+                <strong>导数定义：</strong><br>
+                f'(x) = lim[h→0] (f(x+h) - f(x))/h
+            </div>
+            
+            <div class="math-formula">
+                <strong>积分基本定理：</strong><br>
+                ∫[a to b] f(x)dx = F(b) - F(a)
+            </div>
+            
+            <div class="math-formula">
+                <strong>矩阵乘法：</strong><br>
+                (AB)ᵢⱼ = Σₖ AᵢₖBₖⱼ
+            </div>
+            
+            <div class="screenshot-placeholder">
+                <h3>📸 应用界面预览</h3>
+                <p>启动应用后，您将看到完整的编辑器界面</p>
+                <p>包含笔记编辑、搜索演示、项目状态和使用说明四个主要标签页</p>
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h2>💻 快速启动</h2>
+            <p>按照以下步骤快速体验我们的系统：</p>
+            
+            <div class="code-block">
+# 1. 克隆项目
+git clone &lt;repository-url&gt;
+cd shuxuewang
+
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 启动应用
+streamlit run app.py
+            </div>
+            
+            <p>启动后在浏览器中访问：<strong>http://localhost:8501</strong></p>
+        </div>
+        
+        <div class="launch-section">
+            <h2>🎯 立即体验</h2>
+            <p>点击下方按钮启动应用，开始您的数学学习之旅！</p>
+            
+            <a href="http://localhost:8501" class="launch-btn" target="_blank">
+                🚀 启动应用
+            </a>
+            
+            <a href="https://github.com/your-repo/shuxuewang" class="launch-btn" target="_blank">
+                📂 查看源码
+            </a>
+            
+            <div style="margin-top: 30px;">
+                <h3>🔧 系统要求</h3>
+                <p>Python 3.8+ | 现代浏览器 | 2GB RAM</p>
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h2>📋 主要特性</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h4>🎨 用户界面</h4>
+                    <ul>
+                        <li>现代化Web界面</li>
+                        <li>响应式设计</li>
+                        <li>实时预览</li>
+                        <li>多标签页布局</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>🔍 搜索功能</h4>
+                    <ul>
+                        <li>多源搜索整合</li>
+                        <li>智能相关度排序</li>
+                        <li>数学内容识别</li>
+                        <li>搜索历史记录</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>📝 编辑功能</h4>
+                    <ul>
+                        <li>Markdown支持</li>
+                        <li>LaTeX公式渲染</li>
+                        <li>自动保存</li>
+                        <li>语法高亮</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>🛠️ 技术特性</h4>
+                    <ul>
+                        <li>模块化架构</li>
+                        <li>SQLite数据库</li>
+                        <li>完整测试覆盖</li>
+                        <li>API集成支持</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 数学笔记智能搜索系统 | 专为数学学习而设计</p>
+            <p>🧮 让数学学习更加智能和高效</p>
+        </div>
+    </div>
+    
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为启动按钮添加点击效果
+            const launchBtns = document.querySelectorAll('.launch-btn');
+            launchBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    // 检查是否是本地链接
+                    if (this.href.includes('localhost:8501')) {
+                        // 尝试打开本地应用
+                        const newWindow = window.open(this.href, '_blank');
+                        if (!newWindow) {
+                            alert('请确保应用已启动！\n运行命令：streamlit run app.py');
+                        }
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            // 添加滚动动画效果
+            const cards = document.querySelectorAll('.demo-card, .feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

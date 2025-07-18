@@ -1,76 +1,61 @@
-# 数学笔记智能搜索系统 (Math Notes Search System)
+# 🧮 数学笔记智能搜索系统
 
-一个专为数学学习设计的智能搜索系统，能够识别数学术语、提供相关度排序，并支持搜索历史管理。
+专为数学学习设计的智能笔记和搜索工具，支持LaTeX公式编辑、数学术语识别和多源搜索整合。
 
-## 🚀 项目特色
+## ✨ 主要功能
 
-- **智能数学术语识别**: 自动识别文本中的数学概念和LaTeX公式
-- **多源搜索整合**: 支持Google、Bing、arXiv等多个搜索源
-- **相关度智能排序**: 基于数学领域的专业相关度算法
-- **搜索历史管理**: 完整的搜索历史记录和统计分析
-- **模块化架构**: 清晰的接口设计，易于扩展和维护
+- 📝 **数学笔记编辑器** - 支持Markdown和LaTeX公式的实时编辑预览
+- 🔍 **智能搜索功能** - 多源搜索整合，自动识别数学内容
+- 📊 **搜索历史管理** - 完整的搜索记录和统计分析
+- 🧮 **数学内容识别** - 自动检测和处理数学术语、公式
 
-## 📋 功能概览
+## 🚀 快速体验
 
-### 核心功能
-- ✅ **数据模型**: 完整的搜索结果、历史记录、数学术语数据模型
-- ✅ **数据库管理**: SQLite数据库连接和搜索历史存储
-- ✅ **配置管理**: 灵活的应用配置和环境变量支持
-- 🔄 **文本处理**: 数学术语识别和LaTeX解析 (开发中)
-- 🔄 **搜索管理**: 多源搜索和结果整合 (开发中)
-- 🔄 **相关度计算**: 智能排序和数学领域权重 (开发中)
-- 🔄 **用户界面**: Streamlit Web界面 (开发中)
+### 一键启动
+```bash
+# 克隆项目
+git clone <repository-url>
+cd shuxuewang
 
-### 已实现模块
+# 安装依赖
+pip install -r requirements.txt
 
-#### 数据模型 (`math_search/models/`)
-- **SearchResult**: 搜索结果数据类，支持相关度评分和数学内容检测
-- **SearchHistory**: 搜索历史记录，包含查询文本、关键词、时间戳等
-- **MathTerm**: 数学术语模型，支持LaTeX表示和分类管理
+# 启动应用
+streamlit run app.py
+```
 
-#### 数据库模块 (`math_search/database/`)
-- **DatabaseConnection**: 线程安全的SQLite连接管理器
-- **HistoryRepository**: 搜索历史的完整CRUD操作和查询功能
+### 在线演示
+启动后访问：http://localhost:8501
 
-#### 配置模块 (`math_search/config/`)
-- **Settings**: 统一的应用配置管理，支持环境变量加载
-
-## 🛠️ 安装和使用
+## 🛠️ 详细安装
 
 ### 环境要求
 - Python 3.8+
-- SQLite 3
+- 现代浏览器 (Chrome, Firefox, Safari)
 
-### 安装步骤
+### 完整安装步骤
 
-1. **克隆项目**
-   ```bash
-   git clone <repository-url>
-   cd shuxuewang
-   ```
-
-2. **创建虚拟环境**
+1. **创建虚拟环境**
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # Linux/Mac
-   # 或
    .venv\Scripts\activate     # Windows
    ```
 
-3. **安装依赖**
+2. **安装依赖**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **配置环境变量**
+3. **配置环境变量 (可选)**
    ```bash
    cp .env.example .env
-   # 编辑 .env 文件，添加API密钥
+   # 编辑 .env 文件添加搜索API密钥以获得真实搜索结果
    ```
 
-5. **运行应用**
+4. **启动应用**
    ```bash
-   streamlit run "import streamlit as st.py"
+   streamlit run app.py
    ```
 
 ### 环境变量配置

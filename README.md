@@ -1,76 +1,106 @@
-# 数学笔记智能搜索系统 (Math Notes Search System)
+# 🧮 数学笔记智能搜索系统
 
-一个专为数学学习设计的智能搜索系统，能够识别数学术语、提供相关度排序，并支持搜索历史管理。
+专为数学学习设计的智能笔记和搜索工具，支持LaTeX公式编辑、数学术语识别和智能文本选择搜索。
 
-## 🚀 项目特色
+## ✨ 主要功能
 
-- **智能数学术语识别**: 自动识别文本中的数学概念和LaTeX公式
-- **多源搜索整合**: 支持Google、Bing、arXiv等多个搜索源
-- **相关度智能排序**: 基于数学领域的专业相关度算法
-- **搜索历史管理**: 完整的搜索历史记录和统计分析
-- **模块化架构**: 清晰的接口设计，易于扩展和维护
+- 📝 **增强数学笔记编辑器** - 支持Markdown和LaTeX公式的实时编辑预览
+- 🎯 **智能文本选择搜索** - 选择文本即可触发搜索，自动识别数学内容
+- 🧮 **数学内容智能检测** - 自动识别LaTeX公式、数学术语和符号
+- 📊 **搜索历史管理** - 完整的搜索记录和统计分析
+- 🔍 **多源搜索整合** - 支持Google、Bing、arXiv等多个搜索源
+- ⚡ **快捷操作面板** - 常用数学术语一键搜索
 
-## 📋 功能概览
+## 🚀 快速体验
 
-### 核心功能
-- ✅ **数据模型**: 完整的搜索结果、历史记录、数学术语数据模型
-- ✅ **数据库管理**: SQLite数据库连接和搜索历史存储
-- ✅ **配置管理**: 灵活的应用配置和环境变量支持
-- 🔄 **文本处理**: 数学术语识别和LaTeX解析 (开发中)
-- 🔄 **搜索管理**: 多源搜索和结果整合 (开发中)
-- 🔄 **相关度计算**: 智能排序和数学领域权重 (开发中)
-- 🔄 **用户界面**: Streamlit Web界面 (开发中)
+### 一键启动
+```bash
+# 克隆项目
+git clone <repository-url>
+cd shuxuewang
 
-### 已实现模块
+# 安装依赖
+pip install -r requirements.txt
 
-#### 数据模型 (`math_search/models/`)
-- **SearchResult**: 搜索结果数据类，支持相关度评分和数学内容检测
-- **SearchHistory**: 搜索历史记录，包含查询文本、关键词、时间戳等
-- **MathTerm**: 数学术语模型，支持LaTeX表示和分类管理
+# 启动应用
+streamlit run enhanced_math_editor.py
+```
 
-#### 数据库模块 (`math_search/database/`)
-- **DatabaseConnection**: 线程安全的SQLite连接管理器
-- **HistoryRepository**: 搜索历史的完整CRUD操作和查询功能
+### 在线演示
+启动后访问：http://localhost:8501
 
-#### 配置模块 (`math_search/config/`)
-- **Settings**: 统一的应用配置管理，支持环境变量加载
+### 核心功能演示
+- **文本选择搜索**: 在编辑器中输入数学内容，选择文本后点击搜索按钮
+- **数学内容检测**: 输入LaTeX公式如 `$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$`
+- **快捷术语搜索**: 点击右侧面板的数学术语按钮快速搜索
+- **搜索历史**: 查看和重复之前的搜索查询
 
-## 🛠️ 安装和使用
+## 🎯 已实现功能详情
+
+### 📝 增强数学笔记编辑器
+- **Markdown编辑**: 支持完整的Markdown语法
+- **LaTeX公式支持**: 行内公式 `$...$` 和块级公式 `$$...$$`
+- **实时预览**: 编辑内容实时渲染显示
+- **笔记保存**: 自动保存到本地文件
+- **文件管理**: 新建、保存、加载笔记文件
+
+### 🎯 智能文本选择搜索
+- **文本选择检测**: 专用输入框接收选中文本
+- **数学内容识别**: 自动检测LaTeX公式和数学术语
+- **多种搜索模式**: 普通搜索和数学专项搜索
+- **快捷操作**: 常用数学术语一键搜索
+- **搜索状态管理**: 完整的搜索会话管理
+
+### 🧮 数学内容智能检测
+- **LaTeX公式识别**: 支持行内、块级、环境等多种格式
+- **数学术语检测**: 自动识别中英文数学术语
+- **符号处理**: 支持各种数学符号和表达式
+- **置信度评分**: 为检测结果提供可信度评估
+- **实时分析**: 文本输入时实时检测和高亮
+
+### 📊 数据模型和存储
+- **搜索结果模型**: 完整的搜索结果数据结构
+- **搜索历史模型**: 详细的搜索记录管理
+- **数学术语模型**: 结构化的数学术语表示
+- **SQLite数据库**: 本地数据持久化存储
+- **数据验证**: 完整的数据完整性检查
+
+### 🔧 核心组件架构
+- **接口驱动设计**: 清晰的模块接口定义
+- **文本处理器**: 高级文本分析和处理功能
+- **搜索管理器**: 多源搜索整合和管理
+- **相关度计算器**: 智能搜索结果排序
+- **UI管理器**: 统一的用户界面管理
+
+## 🛠️ 详细安装
 
 ### 环境要求
 - Python 3.8+
-- SQLite 3
+- 现代浏览器 (Chrome, Firefox, Safari)
 
-### 安装步骤
+### 完整安装步骤
 
-1. **克隆项目**
-   ```bash
-   git clone <repository-url>
-   cd shuxuewang
-   ```
-
-2. **创建虚拟环境**
+1. **创建虚拟环境**
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # Linux/Mac
-   # 或
    .venv\Scripts\activate     # Windows
    ```
 
-3. **安装依赖**
+2. **安装依赖**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **配置环境变量**
+3. **配置环境变量 (可选)**
    ```bash
    cp .env.example .env
-   # 编辑 .env 文件，添加API密钥
+   # 编辑 .env 文件添加搜索API密钥以获得真实搜索结果
    ```
 
-5. **运行应用**
+4. **启动应用**
    ```bash
-   streamlit run "import streamlit as st.py"
+   streamlit run app.py
    ```
 
 ### 环境变量配置
@@ -127,19 +157,30 @@ shuxuewang/
 │   │   └── settings.py            # 应用设置
 │   ├── interfaces/                # 接口定义 ✅
 │   │   ├── text_processor.py      # 文本处理接口
+│   │   ├── search_manager.py      # 搜索管理接口
 │   │   ├── relevance_calculator.py # 相关度计算接口
-│   │   └── ...
-│   ├── text_processing/           # 文本处理 🔄
-│   ├── search_management/         # 搜索管理 🔄
-│   ├── relevance_calculation/     # 相关度计算 🔄
-│   └── ui_components/             # UI组件 🔄
+│   │   └── ui_manager.py          # UI管理接口
+│   ├── text_processing/           # 文本处理 ✅
+│   │   └── text_processor.py      # 文本处理实现
+│   ├── search_management/         # 搜索管理 ✅
+│   │   └── search_manager.py      # 搜索管理实现
+│   ├── relevance_calculation/     # 相关度计算 ✅
+│   │   └── relevance_calculator.py # 相关度计算实现
+│   └── ui_components/             # UI组件 ✅
+│       └── ui_manager.py          # UI管理器实现
 ├── tests/                         # 测试文件 ✅
-│   ├── test_models.py            # 模型测试
-│   ├── test_database.py          # 数据库测试
+│   ├── test_*.py                 # 单元测试
 │   └── demo_*.py                 # 演示脚本
+├── app.py                         # 基础版应用
+├── enhanced_math_editor.py        # 增强版编辑器 ✅
+├── start_app.py                   # 启动脚本
 ├── requirements.txt               # 项目依赖
 ├── .env.example                   # 环境变量模板
-└── README.md                      # 项目说明
+├── README.md                      # 项目说明
+├── FAQ.md                         # 常见问题
+├── DEVELOPMENT_GUIDELINES.md      # 开发规范
+├── PROJECT_STRUCTURE.md           # 项目结构
+└── TEXT_SELECTION_FEATURE.md     # 文本选择功能文档
 ```
 
 ## 🔧 开发指南

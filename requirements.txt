@@ -12,14 +12,14 @@ pandas>=2.0.0
 numpy>=1.24.0
 
 # 数据库
-sqlite3  # Python内置模块
+# sqlite3  # Python内置模块
 
 # 文本处理
 nltk>=3.8.1
 scikit-learn>=1.3.0
 
 # 缓存
-pickle  # Python内置模块
+# pickle  # Python内置模块
 
 # 测试
 pytest>=7.4.0

@@ -1,56 +1,13 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual Environment
-.venv/
-venv/
-ENV/
-env/
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
-
-# Environment variables
-.env
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
+node_modules
 .DS_Store
-Thumbs.db
-
-# Pytest
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Logs
+.vscode-test/
+.vscode-test-web/
+*.tsbuildinfo
+*.vsix
 *.log
-
-# Problematic files
-e
+out
+dist
+docs/_site
+docs/.sass-cache
+docs/.jekyll-metadata
+.test-workspace

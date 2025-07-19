@@ -1,0 +1,43 @@
+{
+  "name": "foam",
+  "version": "0.2.0",
+  "description": "Foam",
+  "repository": "git@github.com:foambubble/foam.git",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "version-extension": "lerna version",
+    "package-extension": "yarn workspace foam-vscode package-extension",
+    "install-extension": "yarn workspace foam-vscode install-extension",
+    "publish-extension": "yarn workspace foam-vscode publish-extension",
+    "reset": "yarn && yarn clean && yarn build",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "test": "yarn workspace foam-vscode test",
+    "lint": "lerna run lint",
+    "watch": "lerna run watch --concurrency 20"
+  },
+  "devDependencies": {
+    "all-contributors-cli": "^6.16.1",
+    "lerna": "^6.4.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "dependencies": {}
+}
